@@ -127,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea/
+chromedriver
+3.10.2_0/
+venv3.8.6/
