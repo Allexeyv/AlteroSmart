@@ -9,6 +9,7 @@ ADDBLOCK_PLUS_PATH = project_path / '3.10.2_0'
 
 
 def pytest_addoption(parser):
+    """Parses command line args"""
     parser.addoption(
         '--driver', action='store', default='chrome', help="Choose browser: chrome only"
     )
@@ -22,6 +23,7 @@ def pytest_addoption(parser):
 
 @pytest.fixture(scope="function")
 def driver(request):
+    """Fixture creates driver"""
     browser_name = request.config.getoption("driver")
     chromedriver_path = request.config.getoption("chromedriver_path")
     if browser_name == "chrome":
